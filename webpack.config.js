@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js[x]?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: ['react-hot-loader', 'babel-loader?presets[]=react,presets[]=es2015']
       },
@@ -29,7 +29,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.css'],
     modules: [
       path.join(__dirname, 'src'),
       'node_modules'

@@ -1,5 +1,5 @@
 import React from 'react'
-import Dropdown from '../css/dropdown.css'
+import Dropdown from 'css/dropdown'
 
 export default React.createClass({
     getInitialState() {
