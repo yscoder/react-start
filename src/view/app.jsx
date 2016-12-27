@@ -1,6 +1,20 @@
 import React from 'react'
 import Dropdown from 'components/dropdown'
 
+/**
+ * 无状态组件
+ *
+ * @param {any} props
+ */
+const ShowCity = props => <span> 你选择了：{props.item}</span>
+
+/**
+ * 组合组件
+ *
+ * @export
+ * @class App
+ * @extends {React.Component}
+ */
 export default class App extends React.Component {
     constructor(props) {
         super(props)
@@ -10,15 +24,15 @@ export default class App extends React.Component {
         }
     }
 
-    onSelected(item) {
+    onSelected = (item) => {
         this.setState({ selectItem: item })
     }
 
     render() {
         return (
             <div>
-                <Dropdown data={this.state.data} onChange={this.onSelected.bind(this)} />
-                <span> 你选择了：{this.state.selectItem}</span>
+                <Dropdown data={this.state.data} onChange={this.onSelected} />
+                <ShowCity item={this.state.selectItem} />
             </div>
         )
     }

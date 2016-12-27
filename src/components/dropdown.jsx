@@ -1,6 +1,13 @@
 import React from 'react'
-import Style from 'css/dropdown'
+import Style from 'less/dropdown'
 
+/**
+ * Dropdown Component
+ *
+ * @export
+ * @class Dropdown
+ * @extends {React.Component}
+ */
 export default class Dropdown extends React.Component {
     constructor(props) {
         super(props)
@@ -10,7 +17,7 @@ export default class Dropdown extends React.Component {
         }
     }
 
-    toggle() {
+    toggle = () => {
         this.setState({ show: !this.state.show })
     }
 
@@ -25,7 +32,7 @@ export default class Dropdown extends React.Component {
     render() {
         return (
             <div className={Style.wrap + (this.state.show ? ' ' + Style.in : '')}>
-                <button type="button" className={Style.btn} onClick={this.toggle.bind(this)}>{this.props.data[this.state.selectIndex]}</button>
+                <button type="button" className={Style.btn} onClick={this.toggle}>{this.props.data[this.state.selectIndex]}</button>
                 <ul className={Style.menu}>
                     {
                         this.props.data.map((item, i) => (
